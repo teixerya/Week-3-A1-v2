@@ -10,15 +10,12 @@
 <h2>Message</h2>
 
 <div th:switch="${envelope.message}">
-    <p th:case="0">Purr</p>
-    <!--/*/
-    <p th:case="1">Mew</p>
-    <p th:case="*">Hiss</p>
-    /*/-->
+
+    <p th:case="0">Faculty</p>
+    <p th:case="1">Staff</p>
+
 </div>
 
-<p th:text="${envelope.registered}?'Registered':'Not Registered'">Not Registered</p>
-<p>
     <a href="Input.html" th:href="@{Input}">Back to Input</a>
 </p>
 </body>

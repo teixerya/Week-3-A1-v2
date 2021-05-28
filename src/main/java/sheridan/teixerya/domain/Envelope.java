@@ -7,10 +7,9 @@ import javax.validation.constraints.Min;
 public class Envelope implements Serializable {
 
     @Min(0)
-    @Max(2)
-    private int message = 1;
-    // no need to validate the boolean
-    private boolean registered = false;
+    @Max(1)
+    private int message;
+
 
     public Envelope() {
     }
@@ -23,19 +22,12 @@ public class Envelope implements Serializable {
         this.message = message;
     }
 
-    public boolean isRegistered() {
-        return registered;
-    }
 
-    public void setRegistered(boolean registered) {
-        this.registered = registered;
-    }
 
     @Override
     public String toString() {
         return "Envelope{" +
                 "message=" + message +
-                ", registered=" + registered +
                 '}';
     }
 }

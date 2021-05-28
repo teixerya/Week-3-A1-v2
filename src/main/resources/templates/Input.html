@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
     <title>Input</title>
 </head>
 <body>
@@ -14,15 +14,13 @@
             <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
         </ul>
     </div>
-    <h2>Message</h2>
+    <h2>Status</h2>
     <p>
-        <label><input type="radio" th:field="*{message}" th:value="0">Purr</label>
-        <label><input type="radio" th:field="*{message}" th:value="1">Mew</label>
-        <label><input type="radio" th:field="*{message}" th:value="2">Hiss</label>
+        <label><input type="radio" th:field="*{message}" th:value="0">Faculty</label>
+        <label><input type="radio" th:field="*{message}" th:value="1">Staff</label>
+
     </p>
-    <p>
-        <label><input type="checkbox" th:name="registered">Registered</label>
-    </p>
+
     <p>
         <input type="submit">
     </p>
