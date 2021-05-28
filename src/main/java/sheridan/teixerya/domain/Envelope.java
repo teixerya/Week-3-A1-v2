@@ -14,17 +14,16 @@ public class Envelope implements Serializable {
     @NotBlank
     private String firstName = "";
 
-    @NotBlank
-    private String lastName = "";
+
 
 
     public Envelope() {
     }
 
-    public Envelope(int message,String firstName,String lastName) {
+    public Envelope(int message,String firstName) {
         this.message = message;
         this.firstName = firstName;
-        this.lastName = lastName;
+
     }
 
     public int getMessage() {
@@ -43,20 +42,14 @@ public class Envelope implements Serializable {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     @Override
     public String toString() {
         return "Envelope{" +
                 "message=" + message +
                 "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+
                 '}';
     }
 }
