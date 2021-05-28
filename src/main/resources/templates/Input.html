@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{main.css}">
     <title>Input</title>
 </head>
 <body>
 <!--____________________________________-->
 
-<h2>Employee name</h2>
+<h1>Employee name</h1>
 <form action="Output.html" th:action="@{Process}" th:object="${envelope}">
 
     <div th:if="${#fields.hasErrors('*')}">
@@ -21,10 +21,7 @@
         <label for="fn">Name</label>
         <input id="fn" th:field="*{firstName}">
     </p>
-<!--    <p>-->
-<!--        <label for="ln">Last Name</label>-->
-<!--        <input id="ln" th:field="*{lastName}">-->
-<!--    </p>-->
+
 
     <h2>Status</h2>
     <p>
@@ -38,27 +35,12 @@
     </p>
 
 </form>
+<br><br>
 
+<footer>
+    <p>Programmer: Ryan Teixeira</p>
+    <p>Sheridan College</p>
+</footer>
 
-<!--____________________________________-->
-<!--<h1>Input 1022</h1>-->
-<!--<form action="Output.html" th:action="@{Process}" th:object="${envelope}">-->
-<!--    <div th:if="${#fields.hasErrors('*')}">-->
-<!--        <h3 class="error">Input Errors</h3>-->
-<!--&lt;!&ndash;        <ul>&ndash;&gt;-->
-<!--&lt;!&ndash;            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>&ndash;&gt;-->
-<!--&lt;!&ndash;        </ul>&ndash;&gt;-->
-<!--    </div>-->
-<!--    <h2>Status</h2>-->
-<!--    <p>-->
-<!--        <label><input type="radio" th:field="*{message}" th:value="0">Faculty</label>-->
-<!--        <label><input type="radio" th:field="*{message}" th:value="1">Staff</label>-->
-
-<!--    </p>-->
-
-<!--    <p>-->
-<!--        <input type="submit">-->
-<!--    </p>-->
-<!--</form>-->
 </body>
 </html>

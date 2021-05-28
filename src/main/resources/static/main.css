@@ -15,9 +15,14 @@ h3.error{
 }
 li.error{
     font-style: italic;
-    color: crimson;
+    color: brown;
 }
 
 footer{
     text-align:center;
+}
+
+body{
+    background-color: burlywood;
+    font-size: 20px;
 }

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/main.css" th:href="@{main.css}">
+    <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">
     <title>Output</title>
 </head>
 <body>
@@ -10,11 +10,11 @@
 
 <p>
     <label>Name: <span th:text="${envelope.firstName}">Bart </span>
-<!--<span th:text="${envelope.lastName}">Simpson</span>-->
+
 </label>
 <p>
 
-____________________________________
+
 <h2>Status </h2>
 
 <label th:switch="${envelope.message}">
@@ -27,7 +27,7 @@ ____________________________________
     <a href="Input.html" th:href="@{Input}">Back to Input</a>
 </p>
 <br><br>
-<footer>
+    <footer>
     <p>Programmer: Ryan Teixeira</p>
     <p>Sheridan College</p>
     </footer>
