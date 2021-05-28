@@ -7,6 +7,13 @@
 </head>
 <body>
 <h1>Output</h1>
+
+
+<p>First Name:<span th:text="${envelope.firstName}">Bart</span></p>
+<p>Last Name:<span th:text="${envelope.lastName}">Simpson</span></p>
+
+
+____________________________________
 <h2>Message</h2>
 
 <div th:switch="${envelope.message}">

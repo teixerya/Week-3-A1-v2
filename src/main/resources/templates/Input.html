@@ -6,14 +6,26 @@
     <title>Input</title>
 </head>
 <body>
-<h1>Input</h1>
+<!--____________________________________-->
+
+<h2>Enter your name</h2>
 <form action="Output.html" th:action="@{Process}" th:object="${envelope}">
+
     <div th:if="${#fields.hasErrors('*')}">
         <h3 class="error">Input Errors</h3>
         <ul>
             <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
         </ul>
     </div>
+    <p>
+        <label for="fn">First Name</label>
+        <input id="fn" th:field="*{firstName}">
+    </p>
+    <p>
+        <label for="ln">Last Name</label>
+        <input id="ln" th:field="*{lastName}">
+    </p>
+
     <h2>Status</h2>
     <p>
         <label><input type="radio" th:field="*{message}" th:value="0">Faculty</label>
@@ -22,8 +34,31 @@
     </p>
 
     <p>
-        <input type="submit">
+        <input type="submit" value="Send">
     </p>
+
 </form>
+
+
+<!--____________________________________-->
+<!--<h1>Input 1022</h1>-->
+<!--<form action="Output.html" th:action="@{Process}" th:object="${envelope}">-->
+<!--    <div th:if="${#fields.hasErrors('*')}">-->
+<!--        <h3 class="error">Input Errors</h3>-->
+<!--&lt;!&ndash;        <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ul>&ndash;&gt;-->
+<!--    </div>-->
+<!--    <h2>Status</h2>-->
+<!--    <p>-->
+<!--        <label><input type="radio" th:field="*{message}" th:value="0">Faculty</label>-->
+<!--        <label><input type="radio" th:field="*{message}" th:value="1">Staff</label>-->
+
+<!--    </p>-->
+
+<!--    <p>-->
+<!--        <input type="submit">-->
+<!--    </p>-->
+<!--</form>-->
 </body>
 </html>
