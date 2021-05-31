@@ -23,6 +23,8 @@ public class Envelope implements Serializable {
     private final Random random = new Random();
     int x = random.nextInt(3) + 1;
 
+    private int winnerResult;
+
     static String resultMessage = "No Winner yet";
 
 
@@ -79,6 +81,14 @@ public class Envelope implements Serializable {
         this.firstName = firstName;
     }
 
+    public int getWinnerResult() {
+        return winnerResult;
+    }
+
+    public void setWinnerResult(int winnerResult) {
+        this.winnerResult = winnerResult;
+    }
+
     public String getWinner() {
 
 
@@ -129,39 +139,50 @@ public class Envelope implements Serializable {
         if (personPlay.equals(computerPlay)) {
             System.out.println("It's a tie!");
             setResultMessage("It's a tie!");
+            setWinnerResult(0);
+
+
         } else if (personPlay.equals("R")) {
             if (computerPlay.equals("S")) {
                 System.out.println("Rock crushes scissors. You win!!");
                 setResultMessage("Rock crushes scissors. You win!!");
+                setWinnerResult(2);
+
             } else if (computerPlay.equals("P")) {
                 System.out.println("Paper eats rock. You lose!!");
                 setResultMessage("Paper eats rock. You lose!!");
+                setWinnerResult(1);
             }
         } else if (personPlay.equals("P")) {
             if (computerPlay.equals("S")) {
                 System.out.println("Scissor cuts paper. You lose!!");
                 setResultMessage("Scissor cuts paper. You lose!!");
+                setWinnerResult(1);
 
             } else if (computerPlay.equals("R")) {
                 System.out.println("Paper eats rock. You win!!");
                 setResultMessage("Paper eats rock. You win!!");
+                setWinnerResult(2);
             }
         } else if (personPlay.equals("S")) {
             if (computerPlay.equals("P")) {
                 System.out.println("Scissor cuts paper. You win!!");
                 setResultMessage("Scissor cuts paper. You win!!");
+                setWinnerResult(2);
 
             } else if (computerPlay.equals("R")) {
                 System.out.println("Rock breaks scissors. You lose!!");
                 setResultMessage("Rock breaks scissors. You lose!!");
+                setWinnerResult(1);
             }
         } else {
             System.out.println("Invalid user input.");
             setResultMessage("Invalid user input.");
+
         }
 
 
-        return getResultMessage() + " " + resultMessage;
+        return resultMessage;
     }
 
     @Override

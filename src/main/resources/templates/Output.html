@@ -25,8 +25,11 @@
 
 </label>
 
-<h2>Computer Weapon Selected</h2>
+<img th:src="@{|images/rockpaperscissors/weapon_${envelope.message}.png|}">
 
+
+<h2>Computer Weapon Selected</h2>
+----------------------------------------------------------
 <label th:switch="${envelope.number}">
 
     <p th:case="1" >Rock</p>
@@ -35,11 +38,22 @@
 
 </label>
 
+<img th:src="@{|images/rockpaperscissors/weapon_${envelope.number}.png|}">
+
+----------------------------------------------------------
+
+<br><br>
+
 <label>Winner: <span th:text="${envelope.getWinner()}">Bart </span></label>
+
+<!--<img th:src="@{|images/winnerpicture/user_${envelope.number}.png|}">-->
+
+
 <br>
     <a href="Input.html" th:href="@{Input}">Play Again</a>
 </p>
 <br><br>
+
     <footer>
     <p>Programmer: Ryan Teixeira</p>
     <p>Sheridan College</p>
