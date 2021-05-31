@@ -18,8 +18,12 @@ public class InputController {
     @GetMapping(value={"/", "/Input"})
     public ModelAndView input(){
         logger.trace("input() is called");
+
+
         return new ModelAndView("Input", "envelope", new Envelope());
     }
+
+
 
     @GetMapping("/Process")
     public ModelAndView process(
@@ -27,10 +31,13 @@ public class InputController {
             BindingResult bindingResult){
         logger.trace("process() is called");
         logger.debug("envelope = " + envelope);
-        if(bindingResult.hasErrors()){
-            return new ModelAndView("Input");
-        }
+//        if(bindingResult.hasErrors()){
+//            return new ModelAndView("Input");
+//        }
+
         return new ModelAndView("Output", "envelope", envelope);
     }
 
-}
+
+
+}//end of controller

@@ -8,33 +8,39 @@
 <body>
 <!--____________________________________-->
 
-<h1>Employee name</h1>
+<h1>RPS Game</h1>
 <form action="Output.html" th:action="@{Process}" th:object="${envelope}">
 
-    <div th:if="${#fields.hasErrors('*')}">
-        <h3 class="error">Input Errors</h3>
-        <ul>
-            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
-        </ul>
-    </div>
+<!--    <div th:if="${#fields.hasErrors('*')}">-->
+<!--        <h3 class="error">Input Errors</h3>-->
+<!--        <ul>-->
+<!--            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    <p>-->
+<!--        <label for="fn">Name</label>-->
+<!--        <input id="fn" th:field="*{firstName}">-->
+<!--    </p>-->
+
+
+    <h2>Pick your Weapon</h2>
     <p>
-        <label for="fn">Name</label>
-        <input id="fn" th:field="*{firstName}">
+        <label><input type="radio" th:field="*{message}" th:value="0">Rock</label>
+        <label><input type="radio" th:field="*{message}" th:value="1">Paper</label>
+        <label><input type="radio" th:field="*{message}" th:value="2">Scissors</label>
+
     </p>
 
-
-    <h2>Status</h2>
     <p>
-        <label><input type="radio" th:field="*{message}" th:value="0">Faculty </label>
-        <label><input type="radio" th:field="*{message}" th:value="1">Staff </label>
-
-    </p>
-
-    <p>
-        <input type="submit" value="Send">
+        <input type="submit" value="Play">
     </p>
 
 </form>
+<!--____________________________________________-->
+    <h2>Roll the Dice</h2>
+
+
 <br><br>
 
 <footer>
