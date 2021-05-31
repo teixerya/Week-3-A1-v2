@@ -27,9 +27,10 @@
 
 <img th:src="@{|images/rockpaperscissors/weapon_${envelope.message}.png|}">
 
-
-<h2>Computer Weapon Selected</h2>
+<br>
 ----------------------------------------------------------
+<h2>Computer Weapon Selected</h2>
+
 <label th:switch="${envelope.number}">
 
     <p th:case="1" >Rock</p>
@@ -38,15 +39,20 @@
 
 </label>
 
-<img th:src="@{|images/rockpaperscissors/weapon_${envelope.number}.png|}">
+<img th:src="@{|images/rockpaperscissors/weapon_${(envelope.number)-1}.png|}">
 
+<br>
 ----------------------------------------------------------
 
 <br><br>
 
-<label>Winner: <span th:text="${envelope.getWinner()}">Bart </span></label>
 
-<!--<img th:src="@{|images/winnerpicture/user_${envelope.number}.png|}">-->
+<label>Winner: <span th:text="${envelope.getWinner()}">Bart </span></label>
+<br>
+<img th:src="@{|images/winnerpicture/user_${envelope.winnerResult}.png|}">
+
+
+<br>
 
 
 <br>

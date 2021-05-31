@@ -23,7 +23,7 @@ public class Envelope implements Serializable {
     private final Random random = new Random();
     int x = random.nextInt(3) + 1;
 
-    private int winnerResult;
+    private int winnerResult = 1;
 
     static String resultMessage = "No Winner yet";
 
@@ -82,11 +82,14 @@ public class Envelope implements Serializable {
     }
 
     public int getWinnerResult() {
+        System.out.println(winnerResult);
         return winnerResult;
+
     }
 
-    public void setWinnerResult(int winnerResult) {
-        this.winnerResult = winnerResult;
+    public void setWinnerResult(int winnerInput) {
+        winnerResult = winnerInput;
+        System.out.println("setWinner Result was called "+ winnerResult);
     }
 
     public String getWinner() {
@@ -139,7 +142,7 @@ public class Envelope implements Serializable {
         if (personPlay.equals(computerPlay)) {
             System.out.println("It's a tie!");
             setResultMessage("It's a tie!");
-            setWinnerResult(0);
+            setWinnerResult(3);
 
 
         } else if (personPlay.equals("R")) {
