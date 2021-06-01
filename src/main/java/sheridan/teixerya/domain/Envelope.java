@@ -102,11 +102,11 @@ public class Envelope implements Serializable {
         int computerInt; //Randomly generated number used to determine
 
 
-        System.out.println("Hey, let's play Rock, Paper, Scissors!\n" +
-                "Please enter a move.\n" + "Rock = R, Paper" +
-                "= P, and Scissors = S.");
+        System.out.println("Rock, Paper, Scissors has started.\n" +
+                "Available weapons.\n" + "Rock = R, Paper" +
+                "= P, and Scissors = S.\n");
 
-        System.out.println();
+
 
         //Generate computer's play (0,1,2)
         computerInt = x;
@@ -123,8 +123,8 @@ public class Envelope implements Serializable {
         else if (personInt == 3)
             personPlay = "S";
 
-        //Print computer's play
-        System.out.println("Person play is: " + personPlay);
+        //Print computer's weapon
+        System.out.println("Person played: " + personPlay);
 
         if (computerInt == 1)
             computerPlay = "R";
@@ -133,33 +133,33 @@ public class Envelope implements Serializable {
         else if (computerInt == 3)
             computerPlay = "S";
 
-        //Print computer's play
-        System.out.println("Computer play is: " + computerPlay);
+        //Print computer's weapon
+        System.out.println("Computer played: " + computerPlay);
 
-        //See who won. Use nested ifs
 
+        //determine winner
 
         if (personPlay.equals(computerPlay)) {
-            System.out.println("It's a tie!");
-            setResultMessage("It's a tie!");
+            System.out.println("tie match");
+            setResultMessage("tie match");
             setWinnerResult(3);
 
 
         } else if (personPlay.equals("R")) {
             if (computerPlay.equals("S")) {
-                System.out.println("Rock crushes scissors. You win!!");
-                setResultMessage("Rock crushes scissors. You win!!");
+                System.out.println("Rock crushed scissors. You win");
+                setResultMessage("Rock crushed scissors. You win");
                 setWinnerResult(2);
 
             } else if (computerPlay.equals("P")) {
-                System.out.println("Paper eats rock. You lose!!");
-                setResultMessage("Paper eats rock. You lose!!");
+                System.out.println("Paper out smarted rock. You lose");
+                setResultMessage("Paper out smarted rock. You lose");
                 setWinnerResult(1);
             }
         } else if (personPlay.equals("P")) {
             if (computerPlay.equals("S")) {
-                System.out.println("Scissor cuts paper. You lose!!");
-                setResultMessage("Scissor cuts paper. You lose!!");
+                System.out.println("Scissors cut paper. You lose");
+                setResultMessage("Scissors cut paper. You lose");
                 setWinnerResult(1);
 
             } else if (computerPlay.equals("R")) {
@@ -169,21 +169,20 @@ public class Envelope implements Serializable {
             }
         } else if (personPlay.equals("S")) {
             if (computerPlay.equals("P")) {
-                System.out.println("Scissor cuts paper. You win!!");
-                setResultMessage("Scissor cuts paper. You win!!");
+                System.out.println("Paper out smarted rock. You win");
+                setResultMessage("Paper out smarted rock. You win");
                 setWinnerResult(2);
 
             } else if (computerPlay.equals("R")) {
-                System.out.println("Rock breaks scissors. You lose!!");
-                setResultMessage("Rock breaks scissors. You lose!!");
+                System.out.println("Rock broke scissors. You lose");
+                setResultMessage("Rock broke scissors. You lose");
                 setWinnerResult(1);
             }
         } else {
-            System.out.println("Invalid user input.");
-            setResultMessage("Invalid user input.");
+            System.out.println("Invalid weapon input.");
+            setResultMessage("Invalid weapon input.");
 
         }
-
 
         return resultMessage;
     }
@@ -191,11 +190,6 @@ public class Envelope implements Serializable {
     @Override
     public String toString() {
         return "Envelope{" +
-                "message= " + message +
-//                " number= " + number+
-//                " this.number= " + this.number +
-//                " getNumber(fromTosString)= " + this.getNumber() + '\'' +
-
-                '}';
+                "message= " + message + '}';
     }
 }

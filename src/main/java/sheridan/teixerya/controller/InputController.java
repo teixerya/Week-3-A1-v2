@@ -31,13 +31,11 @@ public class InputController {
             BindingResult bindingResult){
         logger.trace("process() is called");
         logger.debug("envelope = " + envelope);
-//        if(bindingResult.hasErrors()){
-//            return new ModelAndView("Input");
-//        }
+
 
         return new ModelAndView("Output", "envelope", envelope);
     }
 
 
 
-}//end of controller
+}
