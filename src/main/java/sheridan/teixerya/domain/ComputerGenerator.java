@@ -10,7 +10,8 @@ public class ComputerGenerator implements Serializable {
 
     private final Logger logger = LoggerFactory.getLogger(ComputerGenerator.class);
 
-    public ComputerGenerator(){}
+    public ComputerGenerator() {
+    }
 
     private final Random random = new Random();
     int generatedValue = random.nextInt(3) + 1;
@@ -37,4 +38,4 @@ public class ComputerGenerator implements Serializable {
     }
 
 
-}//Close Class brace
+}

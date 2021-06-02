@@ -9,28 +9,13 @@ public class FindWinner implements Serializable {
 
     private final Logger logger = LoggerFactory.getLogger(FindWinner.class);
 
-//    private final Random random = new Random();
-//    int x = random.nextInt(3) + 1;
-//    private int computerChoice = 0;
+
     private int winnerResult = 1;
 
     static String resultMessage = "No Winner yet";
 
-public FindWinner(){}
-
-//    public int getComputerChoice() {
-//
-//
-//        logger.trace("getNumber2() is called");
-//
-//        setComputerChoice(x);
-//        logger.debug("getNumber2 = " + x);
-//        return x;
-//    }
-//
-//    public void setComputerChoice(int computerChoice) {
-//        this.computerChoice = computerChoice;
-//    }
+    public FindWinner() {
+    }
 
 
     public String getResultMessage() {
@@ -50,7 +35,7 @@ public FindWinner(){}
 
     public void setWinnerResult(int winnerInput) {
         winnerResult = winnerInput;
-        System.out.println("setWinner Result was called "+ winnerResult);
+        System.out.println("setWinner Result was called " + winnerResult);
     }
 
     public String getWinner(Player player, ComputerGenerator computerGenerator) {
@@ -68,15 +53,13 @@ public FindWinner(){}
                 "= P, and Scissors = S.\n");
 
 
-
-        //Generate computer's play (0,1,2)
+        //Generate computer's
         computerInt = computerGenerator.getGeneratedValue();
+
 //        computerInt = x;
         personInt = player.getUserChoice() + 1;
 
-        //Translate computer's randomly generated play to
-        //string using if //statements
-
+        //Translate computer value to weapon
 
         if (personInt == 1)
             personPlay = "R";
@@ -125,14 +108,14 @@ public FindWinner(){}
                 setWinnerResult(1);
 
             } else if (computerPlay.equals("R")) {
-                System.out.println("Paper eats rock. You win!!");
-                setResultMessage("Paper eats rock. You win!!");
+                System.out.println("Paper eats rock. You win");
+                setResultMessage("Paper eats rock. You win");
                 setWinnerResult(2);
             }
         } else if (personPlay.equals("S")) {
             if (computerPlay.equals("P")) {
-                System.out.println("Paper out smarted rock. You win");
-                setResultMessage("Paper out smarted rock. You win");
+                System.out.println("Scissors cut paper. You win");
+                setResultMessage("Scissors cut paper. You win");
                 setWinnerResult(2);
 
             } else if (computerPlay.equals("R")) {
@@ -150,4 +133,4 @@ public FindWinner(){}
     }
 
 
-}//Object closing brace
+}

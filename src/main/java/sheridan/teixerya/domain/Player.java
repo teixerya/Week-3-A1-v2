@@ -17,8 +17,6 @@ public class Player implements Serializable {
     @Max(3)
     private int userChoice = 1;
 
-    @NotBlank
-    private String firstName = "";
 
     public Player() {
     }
@@ -38,13 +36,6 @@ public class Player implements Serializable {
         this.userChoice = userChoice;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     @Override
     public String toString() {
