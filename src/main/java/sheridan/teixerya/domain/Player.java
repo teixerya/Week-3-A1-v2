@@ -9,28 +9,26 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
-public class Envelope implements Serializable {
+public class Player implements Serializable {
 
-    private final Logger logger = LoggerFactory.getLogger(Envelope.class);
+    private final Logger logger = LoggerFactory.getLogger(Player.class);
 
     @Min(0)
     @Max(3)
     private int userChoice = 1;
 
-
     @NotBlank
     private String firstName = "";
 
-    public Envelope() {
+    public Player() {
     }
 
-    public Envelope(int userChoice) {
+    public Player(int userChoice) {
 
-        logger.trace("Envelope constructor is called");
+        logger.trace("Player constructor is called");
         this.userChoice = userChoice;
 
     }
-
 
     public int getUserChoice() {
         return userChoice;
@@ -50,7 +48,7 @@ public class Envelope implements Serializable {
 
     @Override
     public String toString() {
-        return "Envelope{" +
+        return "Player{" +
                 "message= " + userChoice + '}';
     }
 }

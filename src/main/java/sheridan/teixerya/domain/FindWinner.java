@@ -53,7 +53,7 @@ public FindWinner(){}
         System.out.println("setWinner Result was called "+ winnerResult);
     }
 
-    public String getWinner(Envelope envelope, ComputerGenerator computerGenerator) {
+    public String getWinner(Player player, ComputerGenerator computerGenerator) {
 
 
         String personPlay = ""; //User's play -- "R", "P", or "S"
@@ -72,7 +72,7 @@ public FindWinner(){}
         //Generate computer's play (0,1,2)
         computerInt = computerGenerator.getGeneratedValue();
 //        computerInt = x;
-        personInt = envelope.getUserChoice() + 1;
+        personInt = player.getUserChoice() + 1;
 
         //Translate computer's randomly generated play to
         //string using if //statements

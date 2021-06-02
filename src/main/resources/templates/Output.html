@@ -10,7 +10,7 @@
 
 <h2>Weapon Selected</h2>
 
-<label th:switch="${envelope.userChoice}">
+<label th:switch="${player.userChoice}">
 
     <p th:case="0">Rock</p>
     <p th:case="1">Paper</p>
@@ -18,7 +18,7 @@
 
 </label>
 
-<img th:src="@{|images/rockpaperscissors/weapon_${envelope.userChoice}.png|}">
+<img th:src="@{|images/rockpaperscissors/weapon_${player.userChoice}.png|}">
 
 <br>
 ----------------------------------------------------------
@@ -40,7 +40,7 @@
 <br><br>
 
 
-<label>Winner: <span th:text="${findWinner.getWinner(envelope,computerGenerator)}">Bart </span></label>
+<label>Winner: <span th:text="${findWinner.getWinner(player,computerGenerator)}">Bart </span></label>
 <br>
 <img th:src="@{|images/winnerpicture/user_${findWinner.winnerResult}.png|}">
 
