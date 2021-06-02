@@ -48,7 +48,6 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "message= " + userChoice + '}';
+        return "Player{" + "message= " + userChoice + '}';
     }
 }

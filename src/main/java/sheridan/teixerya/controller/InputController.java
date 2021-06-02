@@ -18,12 +18,12 @@ public class InputController {
     private final Logger logger = LoggerFactory.getLogger(InputController.class);
 
 
-    @GetMapping(value={"/", "/Input"})
-    public ModelAndView input(){
+    @GetMapping(value = {"/", "/Input"})
+    public ModelAndView input() {
         logger.trace("input() is called");
 
-        ModelAndView  modelAndView=
-         new ModelAndView("Input", "player", new Player());
+        ModelAndView modelAndView =
+                new ModelAndView("Input", "player", new Player());
         modelAndView.addObject("findWinner", new FindWinner());
         modelAndView.addObject("computerGenerator", new ComputerGenerator());
 
@@ -34,10 +34,9 @@ public class InputController {
     @GetMapping("/Process")
     public ModelAndView process(
             @Validated @ModelAttribute Player player,
-            BindingResult bindingResult, FindWinner findWinner, ComputerGenerator computerGenerator){
+            BindingResult bindingResult, FindWinner findWinner, ComputerGenerator computerGenerator) {
         logger.trace("process() is called");
         logger.debug("player = " + player);
-
 
         ModelAndView modelAndView2 =
                 new ModelAndView("Output", "player", player);
