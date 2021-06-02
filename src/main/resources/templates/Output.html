@@ -10,7 +10,7 @@
 
 <h2>Weapon Selected</h2>
 
-<label th:switch="${envelope.message}">
+<label th:switch="${envelope.userChoice}">
 
     <p th:case="0">Rock</p>
     <p th:case="1">Paper</p>
@@ -18,13 +18,13 @@
 
 </label>
 
-<img th:src="@{|images/rockpaperscissors/weapon_${envelope.message}.png|}">
+<img th:src="@{|images/rockpaperscissors/weapon_${envelope.userChoice}.png|}">
 
 <br>
 ----------------------------------------------------------
 <h2>Computer Weapon Selected</h2>
 
-<label th:switch="${envelope.number}">
+<label th:switch="${findWinner.computerChoice}">
 
     <p th:case="1" >Rock</p>
     <p th:case="2" >Paper</p>
@@ -32,7 +32,7 @@
 
 </label>
 
-<img th:src="@{|images/rockpaperscissors/weapon_${(envelope.number)-1}.png|}">
+<img th:src="@{|images/rockpaperscissors/weapon_${(findWinner.computerChoice)-1}.png|}">
 
 <br>
 ----------------------------------------------------------
@@ -40,9 +40,9 @@
 <br><br>
 
 
-<label>Winner: <span th:text="${envelope.getWinner()}">Bart </span></label>
+<label>Winner: <span th:text="${findWinner.getWinner(envelope)}">Bart </span></label>
 <br>
-<img th:src="@{|images/winnerpicture/user_${envelope.winnerResult}.png|}">
+<img th:src="@{|images/winnerpicture/user_${findWinner.winnerResult}.png|}">
 
 
 <br>

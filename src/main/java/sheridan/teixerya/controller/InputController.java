@@ -1,5 +1,6 @@
 package sheridan.teixerya.controller;
 
+import org.springframework.ui.Model;
 import sheridan.teixerya.domain.Envelope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,18 +10,23 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
+import sheridan.teixerya.domain.FindWinner;
 
 @Controller
 public class InputController {
 
     private final Logger logger = LoggerFactory.getLogger(InputController.class);
 
+
     @GetMapping(value={"/", "/Input"})
     public ModelAndView input(){
         logger.trace("input() is called");
 
+        ModelAndView  modelAndView=
+         new ModelAndView("Input", "envelope", new Envelope());
+        modelAndView.addObject("findWinner", new FindWinner());
 
-        return new ModelAndView("Input", "envelope", new Envelope());
+        return modelAndView;
     }
 
 
@@ -28,12 +34,18 @@ public class InputController {
     @GetMapping("/Process")
     public ModelAndView process(
             @Validated @ModelAttribute Envelope envelope,
-            BindingResult bindingResult){
+            BindingResult bindingResult, FindWinner findWinner){
         logger.trace("process() is called");
         logger.debug("envelope = " + envelope);
 
 
-        return new ModelAndView("Output", "envelope", envelope);
+        ModelAndView modelAndView2 =
+                new ModelAndView("Output", "envelope", envelope);
+        modelAndView2.addObject("findWinner", findWinner);
+
+        return modelAndView2;
+
+
     }
 
 
