@@ -1,6 +1,7 @@
 package sheridan.teixerya.controller;
 
 import org.springframework.ui.Model;
+import sheridan.teixerya.domain.ComputerGenerator;
 import sheridan.teixerya.domain.Envelope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,7 @@ public class InputController {
         ModelAndView  modelAndView=
          new ModelAndView("Input", "envelope", new Envelope());
         modelAndView.addObject("findWinner", new FindWinner());
+        modelAndView.addObject("computerGenerator", new ComputerGenerator());
 
         return modelAndView;
     }
@@ -34,7 +36,7 @@ public class InputController {
     @GetMapping("/Process")
     public ModelAndView process(
             @Validated @ModelAttribute Envelope envelope,
-            BindingResult bindingResult, FindWinner findWinner){
+            BindingResult bindingResult, FindWinner findWinner, ComputerGenerator computerGenerator){
         logger.trace("process() is called");
         logger.debug("envelope = " + envelope);
 
@@ -42,6 +44,7 @@ public class InputController {
         ModelAndView modelAndView2 =
                 new ModelAndView("Output", "envelope", envelope);
         modelAndView2.addObject("findWinner", findWinner);
+        modelAndView2.addObject("computerGenerator", computerGenerator);
 
         return modelAndView2;
 

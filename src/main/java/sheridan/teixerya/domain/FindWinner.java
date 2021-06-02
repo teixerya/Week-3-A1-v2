@@ -4,34 +4,33 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
-import java.util.Random;
 
 public class FindWinner implements Serializable {
 
     private final Logger logger = LoggerFactory.getLogger(FindWinner.class);
 
-    private final Random random = new Random();
-    int x = random.nextInt(3) + 1;
-    private int computerChoice = 0;
+//    private final Random random = new Random();
+//    int x = random.nextInt(3) + 1;
+//    private int computerChoice = 0;
     private int winnerResult = 1;
 
     static String resultMessage = "No Winner yet";
 
 public FindWinner(){}
 
-    public int getComputerChoice() {
-
-
-        logger.trace("getNumber2() is called");
-
-        setComputerChoice(x);
-        logger.debug("getNumber2 = " + x);
-        return x;
-    }
-
-    public void setComputerChoice(int computerChoice) {
-        this.computerChoice = computerChoice;
-    }
+//    public int getComputerChoice() {
+//
+//
+//        logger.trace("getNumber2() is called");
+//
+//        setComputerChoice(x);
+//        logger.debug("getNumber2 = " + x);
+//        return x;
+//    }
+//
+//    public void setComputerChoice(int computerChoice) {
+//        this.computerChoice = computerChoice;
+//    }
 
 
     public String getResultMessage() {
@@ -54,7 +53,7 @@ public FindWinner(){}
         System.out.println("setWinner Result was called "+ winnerResult);
     }
 
-    public String getWinner(Envelope envelope) {
+    public String getWinner(Envelope envelope, ComputerGenerator computerGenerator) {
 
 
         String personPlay = ""; //User's play -- "R", "P", or "S"
@@ -71,7 +70,8 @@ public FindWinner(){}
 
 
         //Generate computer's play (0,1,2)
-        computerInt = x;
+        computerInt = computerGenerator.getGeneratedValue();
+//        computerInt = x;
         personInt = envelope.getUserChoice() + 1;
 
         //Translate computer's randomly generated play to
